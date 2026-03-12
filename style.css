@@ -1,0 +1,381 @@
+@charset "UTF-8";
+
+/* --- Base & Fonts --- */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    background-color: #FFE8ED;
+    color: #5a5a5a;
+    font-family: "Lilita One", sans-serif; /* タイトルやナビ用基本フォント */
+    line-height: 1.6;
+}
+
+/* --- Header --- */
+header {
+    background-color: #FF8DA5;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-logo {
+    font-family: "Sonsie One", serif; /* ロゴ専用フォント */
+    font-size: 26px;
+    margin: 0;
+}
+
+nav a { color: #fff; text-decoration: none; font-size: 20px; }
+nav ul { display: flex; gap: 20px; list-style: none; margin: 0; padding: 0; }
+
+/* --- Hero --- */
+.hero { margin-top: 60px; text-align: center; }
+.main-visual { width: 100%; max-width: 1200px; height: auto; }
+
+/* --- Container --- */
+.container { padding: 80px 20px; max-width: 1100px; margin: 0 auto; }
+.section-title {
+    color: #FF8DA5;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 40px;
+
+    /* 1. 縁取りの太さを指定（外側に出したい分の2倍の太さを指定するのがコツです） */
+    -webkit-text-stroke-width: 4px; 
+    -webkit-text-stroke-color: #434343;
+
+    /* 2. 描画順序を変更：先に線を引いて、その上から文字を塗りつぶす */
+    paint-order: stroke fill; 
+    
+    /* 念のため古いブラウザ向けの影も追加しておくと、より滑らかになります */
+    text-shadow: 
+        1px 1px 0 #434343, -1px -1px 0 #434343,
+        -1px 1px 0 #434343, 1px -1px 0 #434343;
+}
+/* --- Profile: 150x150 & 丸 & 日本語フォント --- */
+.profile-img-circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #FFD3DD;
+}
+
+.profile-text {
+    font-family: "Noto Sans JP", sans-serif; /* 本文用日本語フォント */
+}
+
+.profile-inner { display: flex; align-items: center; gap: 40px; }
+.card { background: #fff; border-radius: 30px; padding: 40px; box-shadow: 0 10px 20px rgba(255, 141, 165, 0.2); }
+
+/* --- Profile: 名前とふりがなのスタイル --- */
+.profile-text h3 {
+    margin-bottom: 10px;
+    align-items: baseline; /* 名前とふりがなの下のラインを揃える */
+    gap: 15px; /* 名前とふりがなの間の余白 */
+}
+
+.ruby {
+    font-size: 13px; /* ふりがなを少し小さく */
+    font-weight: normal;
+    color: #707070; /* ふりがなは少し落ち着いた色に */
+}
+
+/* 以前のスキルなどのCSSに続く... */
+/* --- Works: 浮遊のみ（影なし） --- */
+.grid-layout { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+
+.work-item img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.work-item:hover img {
+    transform: translateY(-12px); /* 浮き上がる効果のみ */
+}
+
+.work-item p { text-align: center; margin-top: 10px; font-size: 14px; 
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.filter-container { display: flex; justify-content: center; gap: 15px; margin-bottom: 40px; }
+.filter-btn {
+    background-color: #fff; border: 2px solid #FF8DA5; color: #FF8DA5;
+    padding: 8px 25px; border-radius: 20px; cursor: pointer; font-family: inherit;
+}
+.filter-btn.active, .filter-btn:hover { background-color: #FF8DA5; color: #fff; }
+
+/* --- Hobby: 350x350 統一 --- */
+.hobby-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.hobby-item img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hobby-item:hover img { transform: translateY(-12px); }
+.hobby-item h3 { text-align: center; margin-top: 15px; font-size: 18px; }
+
+/* --- Skill List: 星の右に説明を配置 --- */
+.skill-list {
+    margin-top: 25px;
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+
+
+.skill-item {
+    display: flex;
+    align-items: center; /* 縦方向の真ん中揃え */
+    margin-bottom: 8px;
+    white-space: nowrap; /* テキストを勝手に改行させない */
+}
+
+.skill-name {
+    margin: 0;
+    width: 100px; /* スキル名の幅を固定して星の開始位置を揃える */
+    flex-shrink: 0;
+}
+
+.stars {
+    color: #FF8DA5;
+    letter-spacing: 2px;
+    font-weight: bold;
+    width: 110px; /* 星の幅を固定して、その後のテキスト開始位置を揃える */
+    flex-shrink: 0;
+}
+
+.skill-desc {
+    font-size: 13px;
+    color: #5a5a5a;
+    margin-left: 5px; /* 星との微調整用 */
+}
+
+/* スマホ等で画面が狭い場合の対応 */
+@media (max-width: 650px) {
+    .skill-item {
+        flex-wrap: wrap; /* 画面幅が足りない時は説明文を下に送る */
+        white-space: normal;
+    }
+    .skill-desc {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 2px;
+    }
+}
+
+/* --- Contact & Footer --- */
+/* --- Contact: 背景を白、入力欄をグレーに変更 --- */
+.original-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    background: #ffffff;      /* 背景を白に変更 */
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0px 5px 25px rgba(255, 141, 165, 0.2); /* 影を柔らかいピンクに変更 */
+    font-family: "Noto Sans JP", sans-serif;
+}
+
+.form-heasing {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #707070;           /* ラベルの色を調整 */
+}
+
+/* --- Contact フォーム内の文字色修正 --- */
+.original-form input, .original-form textarea {
+    width: 100%;
+    background: #f8f8f8;    
+    color: #5a5a5a;           
+    border: 2px solid #5a5a5a;
+    border-radius: 10px;      /* 角を少し丸く */
+    padding: 15px;
+    margin-bottom: 15px;
+    font-family: "Noto Sans JP", sans-serif;
+    outline: none;
+}
+
+/* プレースホルダ（入力前のヒント文字）の色 */
+.original-form ::placeholder {
+    color: #ccc;
+}
+
+/* 入力中（フォーカス時）のスタイル */
+.original-form input:focus, .original-form textarea:focus {
+    border-color: #434343; /* クリックした時は枠線を濃くして分かりやすく */
+}
+
+/* プレースホルダー（入力ヒント）の色を薄いグレーに */
+.original-form input::placeholder {
+    color: #cccccc;
+}
+
+/* 送信ボタン */
+.btn-area {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn { 
+    padding: 14px 60px;
+    background: #FF8DA5;
+    color: #fff;
+    border: none; 
+    border-radius: 28px;
+    font-size: 20px;
+    cursor: pointer;
+    font-family:  "Noto Sans JP", sans-serif;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background: #ff7491; /* ホバー時に少し濃く */
+}
+
+.btn-area { text-align: center; margin-top: 30px; }
+.btn { 
+    padding: 14px 60px; background: #FF8DA5; color: #fff; border: none; 
+    border-radius: 28px; font-size: 20px; cursor: pointer; font-family: "Noto Sans JP", sans-serif;
+}
+
+footer { background: #FF8DA5; color: #fff; text-align: center; padding: 30px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .grid-layout { grid-template-columns: 1fr; }
+    .profile-inner { flex-direction: column; text-align: center; }
+    .hobby-item img { width: 100%; height: auto; max-width: 350px; }
+}
+
+/* ページ全体のスクロールをなめらかにする（戻るボタン用） */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Works内のリンク装飾をリセット */
+.work-item a {
+    text-decoration: none; /* 下線を消す */
+    color: inherit;        /* 文字色を親要素(5a5a5a)に合わせる */
+    display: block;        /* クリック範囲を広げる */
+}
+
+/* ホバー時の挙動を調整（画像だけでなく全体が浮くようにする場合） */
+.work-item:hover {
+    cursor: pointer;
+}
+
+.work-item a:hover img {
+    transform: translateY(-12px);
+}
+
+/* --- スマートフォン・タブレット対応 (最大 768px) --- */
+@media (max-width: 768px) {
+    /* ヘッダー: ロゴとメニューを上下に分けるか、余白を詰める */
+    header {
+        padding: 10px 20px;
+    }
+    .header-logo {
+        font-size: 20px;
+    }
+    nav a {
+        font-size: 16px;
+    }
+
+    /* コンテナの余白を狭くする */
+    .container {
+        padding: 60px 15px;
+    }
+
+    /* プロフィール: 画像とテキストを縦並びに */
+    .profile-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    .profile-text h3 {
+        justify-content: center; /* 名前を中央に */
+        flex-wrap: wrap;
+    }
+
+    /* スキル: 1行に収まらない場合は縦に並べる */
+    .skill-item {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 15px;
+        border-bottom: 1px dashed #FFD3DD;
+        padding-bottom: 10px;
+    }
+    .skill-name, .stars {
+        width: 100%;
+        text-align: center;
+    }
+    .skill-desc {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+
+    /* Works: 3列から1列（または2列）に */
+    .grid-layout {
+        grid-template-columns: 1fr; /* 1列にする */
+        gap: 20px;
+    }
+
+    /* Hobby: 画像を画面幅に合わせる */
+    .hobby-item img {
+        width: 100%; /* 350px固定を解除 */
+        height: auto;
+        aspect-ratio: 1 / 1; /* 正方形を維持 */
+    }
+
+    /* 詳細ページのテーブル: 項目名と内容を縦並びに */
+    .info-table th, .info-table td {
+        display: block;
+        width: 100%;
+        border-bottom: none;
+        padding: 5px 10px;
+    }
+    .info-table th {
+        color: #FF8DA5;
+        font-weight: bold;
+        padding-top: 15px;
+    }
+    .info-table td {
+        border-bottom: 1px solid #FFE8ED;
+        padding-bottom: 15px;
+    }
+
+    /* フォーム: パディングを調整 */
+    .original-form {
+        padding: 30px 20px;
+    }
+}
+
+/* --- 小さなスマホ用 (最大 480px) --- */
+@media (max-width: 480px) {
+    .section-title {
+        font-size: 30px; /* タイトルを少し小さく */
+        -webkit-text-stroke-width: 2px; /* 縁取りも細くして読みやすく */
+    }
+    .btn {
+        width: 100%; /* ボタンを横幅いっぱいに */
+        padding: 12px 0;
+    }
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio | Otosa Ogura</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Sonsie+One&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="header-logo">My portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#hobby">Hobby</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <img class="main-visual" src="img/logo.png" alt="My portfolio">
+        </section>
+
+<section id="profile" class="container" data-aos="fade-up">
+    <h2 class="section-title">Profile</h2>
+    <div class="card profile-card">
+        <div class="profile-inner">
+            <img src="img/profile.png" alt="小倉 乙紗" class="profile-img-circle">
+            <div class="profile-text">
+<div class="profile-text">
+    <h3>小倉 乙紗 <span class="ruby">おぐら おとさ</span></h3>
+    <p>東京デザインテクノロジーセンター専門学校、<br>UI・UXデザイナー専攻2年。</p>
+                <p>
+                   Age: 19<br>
+                   Born: 2006.03.19<br>
+                   Hometown: Chiba<br>
+                   Hobby: 観劇、イラスト、美術館巡り、ネイル、デコレーション、漫画
+                </p>
+                
+<div class="skill-list">
+    <h4>Skill</h4>
+    
+    <div class="skill-item">
+        <p class="skill-name">HTML/CSS</p>
+        <span class="stars">★★★☆☆</span>
+        <span class="skill-desc">基本的な操作と少しの応用が可能です。</span>
+    </div>
+
+    <div class="skill-item">
+        <p class="skill-name">Figma</p>
+        <span class="stars">★★★★☆</span>
+        <span class="skill-desc">基本的な操作と応用が可能です。</span>
+    </div>
+
+    <div class="skill-item">
+        <p class="skill-name">Photoshop</p>
+        <span class="stars">★★☆☆☆</span>
+        <span class="skill-desc">基本的な操作が可能です。</span>
+    </div>
+
+    <div class="skill-item">
+        <p class="skill-name">Illustrator</p>
+        <span class="stars">★★★☆☆</span>
+        <span class="skill-desc">基本的な操作と少しの応用が可能です。</span>
+    </div>
+</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="works" class="container">
+    <h2 class="section-title" data-aos="fade-up">Works</h2>
+    
+    <div class="filter-container" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="website">Website</button>
+        <button class="filter-btn" data-filter="graphic">Graphic</button>
+    </div>
+
+    <div class="grid-layout" id="works-grid">
+        <div class="work-item" data-category="website" data-aos="fade-up" data-aos-delay="100">
+            <a href="work-portfolio.html">
+                <img src="img/portfolio.png" alt="ポートフォリオ">
+                <p>ポートフォリオ</p>
+            </a>
+        </div>
+        <div class="work-item" data-category="website" data-aos="fade-up" data-aos-delay="300">
+            <a href="work-seikaku.html">
+                <img src="img/seikakusindan.png" alt="性格診断育成ゲーム">
+                <p>性格診断育成ゲーム</p>
+            </a>
+        </div>
+        <div class="work-item" data-category="graphic" data-aos="fade-up" data-aos-delay="300">
+            <a href="work-canon.html">
+                <img src="img/canon.png" alt="Canon EOS R50 広告">
+                <p>Canon EOS R50 広告</p>
+            </a>
+        </div>
+        <div class="work-item" data-category="website" data-aos="fade-up" data-aos-delay="200">
+            <a href="work-pet.html">
+                <img src="img/petEC.png" alt="ペット用品ECサイト">
+                <p>ペット用品ECサイト(架空)</p>
+            </a>
+        </div>
+        <div class="work-item" data-category="website" data-aos="fade-up" data-aos-delay="100">
+            <a href="work-sweets.html">
+                <img src="img/seet.png" alt="スイーツ通販サイト">
+                <p>スイーツ通販サイト(架空)</p>
+            </a>
+        </div>
+        <div class="work-item" data-category="website" data-aos="fade-up" data-aos-delay="200">
+            <a href="work-firstview.html">
+                <img src="img/FirstViewFullScreen.png" alt="ファーストビューフルスクリーン">
+                <p>ファーストビューフルスクリーン</p>
+            </a>
+        </div>
+
+        <div class="work-item" data-category="graphic" data-aos="fade-up" data-aos-delay="100">
+            <a href="work-visual.html">
+                <img src="img/main-visual.png" alt="メインビジュアル">
+                <p>卒業・進級制作展 メインビジュアル</p>
+            </a>
+        </div>
+        <div class="work-item" data-category="graphic" data-aos="fade-up" data-aos-delay="300">
+            <a href="work-eigamura.html">
+                <img src="img/eigamura.png" alt="映画村">
+                <p>映画村</p>
+            </a>
+        </div>
+        <div class="work-item" data-category="graphic" data-aos="fade-up" data-aos-delay="200">
+            <a href="work-dessan.html">
+                <img src="img/dessan.png" alt="デッサン">
+                <p>デッサン</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+        <section id="hobby" class="container">
+            <h2 class="section-title" data-aos="fade-up">Hobby</h2>
+            <div class="hobby-grid">
+                <div class="hobby-item" data-aos="fade-up" data-aos-delay="100">
+                    <img src="img/nameboard.png" alt="ネームボード">
+                    <h3>ネームボード</h3>
+                </div>
+                <div class="hobby-item" data-aos="fade-up" data-aos-delay="200">
+                    <img src="img/mdpn-rk.png" alt="イラスト">
+                    <h3>イラスト</h3>
+                </div>
+                <div class="hobby-item" data-aos="fade-up" data-aos-delay="300">
+                    <img src="img/neiru.png" alt="ネイル">
+                    <h3>ネイル</h3>
+                </div>
+            </div>
+        </section>
+
+        <div id="contact" class="container" data-aos="fade-up">
+            <h2 class="section-title">Contact</h2>
+            <form name="contact" method="POST" data-netlify="true" class="original-form">
+                <label id="user-name" class="form-item">
+                    <p class="form-heasing">お名前</p>
+                    <input type="text" name="name" placeholder="お名前をフルネームでご入力ください" required>
+                </label>
+                <label id="user-email" class="form-item">
+                    <p class="form-heasing">メールアドレス</p>
+                    <input type="email" name="mail" placeholder="メールアドレスをご入力ください" required>
+                </label>
+                <label id="contact-content" class="form-item">
+                    <p class="form-heasing">お問い合わせ内容</p>
+                    <input type="text" name="message" placeholder="お問い合わせ内容をご入力ください" required>
+                </label>
+                <div class="btn-area">
+                    <button type="submit" id="btn_confirm" class="btn">送信</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <small class="copyright">&copy; 2024 OtosaOgura</small>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // AOSの初期化設定を修正
+    AOS.init({
+        duration: 1000,
+        once: false,    // ここを false に変更（スクロールのたびに実行）
+        offset: 150,    // 少し早めにアニメーションを開始するように調整
+        easing: 'ease-out-back',
+        mirror: true    // スクロールで戻ったとき（上に戻る時）もアニメーションさせる設定
+    });
+
+    // タブ切り替え後のリセット
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const workItems = document.querySelectorAll('.work-item');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            const filterValue = button.getAttribute('data-filter');
+            workItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            // フィルタリング後にアニメーションの状態を更新
+            AOS.refresh();
+        });
+    });
+</script>
+</body>
+</html>
