@@ -378,4 +378,64 @@ html {
         width: 100%; /* ボタンを横幅いっぱいに */
         padding: 12px 0;
     }
+}.side-decorations {
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 120px; /* 画像が収まるように少し幅を広げています */
+    pointer-events: none; /* マウスイベントを無効化してクリックの邪魔をしない */
+    z-index: 10; /* コンテンツの背景、ヘッダーよりは下に配置 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* 縦にバランスよく配置 */
+    align-items: center;
+}
+
+/* 左側の位置固定 */
+.left-decorations {
+    left: 40px;
+}
+
+/* 右側の位置固定 */
+.right-decorations {
+    right: 40px;
+}
+
+/* 装飾画像共通設定 */
+.decor-item {
+    width: auto;
+    height: auto;
+    max-width: 100%; /* 横幅に合わせて自動縮小 */
+    user-select: none;
+    /* イラストの透過部分を避けて、綺麗に黒い縁取り風の影を落とす */
+    filter: drop-shadow(3px 3px 0px #f88eac); 
+    animation: floatingDecor 4s ease-in-out infinite alternate;
+}
+
+/* 個別のサイズ・初期の傾き・アニメーションのズレ（ランダム感を出す） */
+.img-heart-1 { max-width: 100px; transform: rotate(-15deg); animation-delay: 0s; }
+.img-star-1  { max-width: 150px; transform: rotate(10deg);  animation-delay: 0.5s; }
+.img-heart-2 { max-width: 55px; transform: rotate(20deg);  animation-delay: 1s; }
+.img-star-2  { max-width: 200px; transform: rotate(-25deg); animation-delay: 1.5s; }
+
+.img-star-3  { max-width: 70px; transform: rotate(15deg);  animation-delay: 0.2s; }
+.img-heart-3 { max-width: 300px; transform: rotate(-20deg); animation-delay: 0.7s; }
+.img-star-4  { max-width: 200px; transform: rotate(30deg);  animation-delay: 1.2s; }
+.img-heart-4 { max-width: 200px; transform: rotate(-10deg); animation-delay: 1.7s; }
+
+/* ふわふわ浮遊するアニメーション */
+@keyframes floatingDecor {
+    0% {
+        transform: translateY(0) rotate(inherit);
+    }
+    100% {
+        transform: translateY(-15px) rotate(inherit); /* 上下に15px動く */
+    }
+}
+
+/* パソコン用の大画面でのみ表示させ、画面幅が1300px以下になったら非表示にする */
+@media (max-width: 1300px) {
+    .side-decorations {
+        display: none;
+    }
 }
